@@ -32,7 +32,7 @@
       // add table-dark class to each table
       tables[i].classList.add('table-dark');
     }
-
+    
     // set light switch input to true
     if (!lightSwitch.checked) {
       lightSwitch.checked = true;
@@ -71,6 +71,26 @@
     localStorage.setItem('lightSwitch', 'light');
   }
 
+  function hideLightSVG() {
+    const svg = document.getElementById('hide-light');
+    svg.style.display = 'none';
+  }
+
+  function showLightSVG() {
+    const svg = document.getElementById('hide-light');
+    svg.style.display = 'block';
+  }
+
+  function hideDarkSVG() {
+    const svg = document.getElementById('hide-dark');
+    svg.style.display = 'none';
+  }
+
+  function showDarkSVG() {
+    const svg = document.getElementById('hide-dark');
+    svg.style.display = 'block';
+  }
+
   /**
    * @function onToggleMode
    * @summary: the event handler attached to the switch. calling @darkMode or @lightMode depending on the checked state.
@@ -78,8 +98,12 @@
   function onToggleMode() {
     if (lightSwitch.checked) {
       darkMode();
+      hideLightSVG();
+      showDarkSVG();
     } else {
       lightMode();
+      hideDarkSVG();
+      showLightSVG();
     }
   }
 
