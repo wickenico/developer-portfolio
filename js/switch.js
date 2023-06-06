@@ -19,6 +19,7 @@
     });
 
     document.body.classList.add('bg-dark');
+    document.body.innerText.add('bg-dark');
 
     if (document.body.classList.contains('text-dark')) {
       document.body.classList.replace('text-dark', 'text-light');
@@ -32,7 +33,7 @@
       // add table-dark class to each table
       tables[i].classList.add('table-dark');
     }
-    
+
     // set light switch input to true
     if (!lightSwitch.checked) {
       lightSwitch.checked = true;
